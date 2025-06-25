@@ -1,6 +1,19 @@
-// creating a first component
+const App = () => {
+  const handleRegister = (event) => {
+    event.preventDefault();
+    const email=event.target.email.value
+    const password=event.target.password.value
+    console.log("Email:",email);
+    console.log("Password:",password);
+  };
+  return (
+    <form onSubmit={handleRegister}>
+      <h1>Register</h1>
+      <input type="email" placeholder="Email..." name="email" />
+      <input type="password" placeholder="Password..."  name="password"/>
+      <button type="submit">Register</button>
+    </form>
+  );
+};
 
-function App(){
-  return <h1>Hello World!</h1>
-} 
 export default App;
